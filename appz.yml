@@ -1,0 +1,29 @@
+app:
+  name: OpensearchDashboard
+  code: OPENSEARCHDASHBOARD
+  notify: srswain@ecloudcontrol.com
+
+build:
+  version: 2.19
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: opensearchdashboard-2.19
+  
+deploy:
+  context: sranjan1995/DEV
+  type: statefulset
+  replicas: 1
+  port:
+  - 5601
+
+volumes:
+- claim: opensearchdashboard-data
+  mount: /usr/share/opensearch-dashboards/data
+  name: opensearchdashboard-data
+  class: microk8s-hostpath
+  size: 5Gi
+  mode: ReadWriteOnce
+  
+properties:
+  revision : 0
