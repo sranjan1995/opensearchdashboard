@@ -26,7 +26,7 @@ volumes:
   mode: ReadWriteOnce
   
 properties:
-  revision : 10
+  revision : 11
   OSD_ADMIN_PASSWORD :
     vault: OSD_ADMIN_PASSWORD
   OSD_ADMIN_USER : admin
