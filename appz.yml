@@ -27,3 +27,5 @@ volumes:
   
 properties:
   revision : 4
+  OSD_ADMIN_PASSWORD
+    vault: OSD_ADMIN_PASSWORD
